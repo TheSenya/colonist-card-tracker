@@ -1,9 +1,20 @@
 {
     "name": "colonist card counter",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "tracks cards in colonist",
     "manifest_version": 3,
     "author": "me",
+    "premissions": ["storage", "tabs"],
+    "host_permissions": ["https://*.colonist.io/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://colonist.io/"],
+            "js": ["script.js"]
+        }
+    ],
     "action":{
         "default_popup": "index.html",
         "default_title": "Counter"

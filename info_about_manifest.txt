@@ -1,0 +1,3 @@
+"permission" ["storage", "tabs"]
+// gives permission for the extension to access the chrome.storage api and chrome.tabs api
+
