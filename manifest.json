@@ -1,0 +1,11 @@
+{
+    "name": "colonist card counter",
+    "version": "1.0.0",
+    "description": "tracks cards in colonist",
+    "manifest_version": 3,
+    "author": "me",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Counter"
+    }
+}
