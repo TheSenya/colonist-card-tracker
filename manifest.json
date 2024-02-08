@@ -4,7 +4,7 @@
     "description": "tracks cards in colonist",
     "manifest_version": 3,
     "author": "me",
-    "premissions": ["storage", "tabs"],
+    "permissions": ["storage", "tabs"],
     "host_permissions": ["https://*.colonist.io/*"],
     "background": {
         "service_worker": "background.js"
