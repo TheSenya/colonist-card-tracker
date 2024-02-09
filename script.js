@@ -9,6 +9,7 @@
 // took from bank brick
 // took from bank brick wool
 // discarded 
+// bought
 // Lesya stole  from you
 
 
@@ -78,8 +79,11 @@ function identifyPlayers(){
     // we can do this by using the 'received starting resources ' text in the chat 
     // maybe also wise to come up with a usecase for when the players d/c and then reconnects
 
+    // looks like player names dont have spaces
+    
+
     if (player in players) {
-        
+
     }
 
 }
@@ -98,24 +102,39 @@ function identifyAction(text, html){
         // console.log('wool = ', wool)
         // console.log('grain = ', grain)
         // console.log('ore = ', ore)
-    }
+    } else if (text.includes('gave bank  and took')) {
 
-    // if (text.includes('got')) {
+    } else if (text.includes('stole  from')) {
         
+        if (text.includes('You stole')) {
+            // you stole from X
+        } else if (text.includes('you')){
+            // X stole from you
 
-    // }else if (text.includes('gave bank  and took ')) {
+        } else {
+            // X stole from Y
+            
+        }
 
-    // }else if (text.includes('stole  from')) {
+    } else if (text.includes('received starting resources')) {
 
-    // }else if (text.includes('got')) {
+    } else if (text.includes('built a ')) {
+        //road
+        //city
+        //settlment?
 
-    // }else if (text.includes('got')) {
 
-    // }else if (text.includes('got')) {
+    } else if (text.includes('discarded')) {
 
-    // }else if (text.includes('got')) {
+    } else if (text.includes('bought')) {
 
-    // }
+    } else if (text.includes('took from bank')) {
+
+    } else if (text.includes('gave bank  and took')) {
+
+    } else {
+        // contains not important info
+    }
 
 
 }
