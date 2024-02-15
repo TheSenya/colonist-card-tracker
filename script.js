@@ -81,14 +81,18 @@ function identifyPlayers(){
 
     // looks like player names dont have spaces
     
+    player = text.split(' ')[0]
 
-    if (player in players) {
-
+    // if player is not in the dict of players then add them 
+    if (!(player in players)) {
+        players[player] = {'lumber': 0, 'brick': 0, 'sheep': 0, 'grain': 0, 'ore': 0};
     }
 
 }
 
 function identifyAction(text, html){
+
+    let isValidAciton = True
 
     if (text.includes('got')) {
 
@@ -133,7 +137,11 @@ function identifyAction(text, html){
     } else if (text.includes('gave bank  and took')) {
 
     } else {
-        // contains not important info
+        isValidAciton = False;
+    }
+
+    if (isValidAciton){
+        identifyPlayers(text)
     }
 
 
