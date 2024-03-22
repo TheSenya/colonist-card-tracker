@@ -127,6 +127,8 @@ function identifyAction(text, html) {
         }
 
     } else if (text.includes('gave bank  and took')) {
+
+        //var text = message.innerText;
         //pass
     } else if (text.includes('stole  from')) {
         
@@ -179,9 +181,35 @@ function identifyAction(text, html) {
 
 
     } else if (text.includes('discarded')) {
+        player = text.split(" ")[0]
+        console.log('123', player)
+
+        if(player in players){
+            players[player]['lumber'] -= lumber
+            players[player]['brick'] -= brick
+            players[player]['wool'] -= wool
+            players[player]['grain'] -= grain
+            players[player]['ore'] -= ore
+        }
+        else{
+            // should not happen
+        }
 
         //pass
     } else if (text.includes('bought')) {
+        player = text.split(" ")[0]
+        console.log('123', player)
+
+        if(player in players){
+            players[player]['lumber'] -= lumber
+            players[player]['brick'] -= brick
+            players[player]['wool'] -= wool
+            players[player]['grain'] -= grain
+            players[player]['ore'] -= ore
+        }
+        else{
+            // should not happen
+        }
         //pass
     } else if (text.includes('took from bank')) {
         //pass
