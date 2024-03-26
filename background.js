@@ -13,4 +13,10 @@
 //   });
 
 
-  
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    if (message.message === "data_from_content_script") {
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            chrome.tabs.sendMessage(tabs[0].id, { message: "data_to_index_html", data: message.data });
+        });
+    }
+});  
